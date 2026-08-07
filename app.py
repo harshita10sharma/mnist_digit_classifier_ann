@@ -70,9 +70,8 @@ if uploaded_file is not None:
     # Normalize pixel values
     image_array = image_array / 255.0
 
-    # Flatten for ANN
-    image_array = image_array.reshape(1, 784)
-
+    # Add batch dimension for the model
+    image_array = image_array.reshape(1, 28, 28)
     # Make prediction
     prediction = model.predict(image_array)
 
