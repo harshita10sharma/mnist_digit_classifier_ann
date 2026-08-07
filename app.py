@@ -21,5 +21,19 @@ if uploaded_file is not None:
     image = Image.open(uploaded_file)
 
     st.image(image, caption="Uploaded Image", width=200)
-    # Convert image to grayscale
-image = image.convert("L")
+
+    # Convert to grayscale
+    image = image.convert("L")
+
+    # Resize to MNIST dimensions
+    image = image.resize((28, 28))
+
+    # Convert to NumPy array
+    image_array = np.array(image)
+    # Automatically detect background
+    # If the image is mostly bright, invert it
+    if image_array.mean() > 127:
+       image_array = 255 - image_array
+    # Display processed image
+    st.write("Processed Image (28×28):")
+    st.image(image_array, width=150)
