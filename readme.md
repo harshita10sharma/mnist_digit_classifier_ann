@@ -8,6 +8,10 @@ The project combines:
 - 🌐 A Streamlit web interface for real-time predictions
 
 ---
+🌐 Live Demo
+
+🔗 Try the deployed application:
+https://mnistdigitclassifier-ann.streamlit.app/
 
 ## 📌 Project Overview
 
